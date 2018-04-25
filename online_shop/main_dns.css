@@ -1,0 +1,58 @@
+html * {
+    /*font-family: Arial;*/
+    background-color: lightgray;
+}
+
+.row_flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#additional_links * {
+    padding-left: 10px;
+}
+
+#business_info * {
+    padding-left: 10px;
+}
+
+#registration * {
+    padding-left: 10px;
+}
+
+#city {
+    padding-left: 10px;
+}
+
+#orange_strip {
+    background-color: orange;
+    height: 60px;
+}
+
+/* 
+.top_information {
+    display: flex;
+    background-color: white;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.top_information .business_info {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+
+
+body {
+    background-color: white;
+}
+
+
+.flex-item {
+    flex-direction: row;
+}
+*/
