@@ -11,39 +11,58 @@
 
 <div id = "main">
     <div id = "top_information">
-        <div>
-            <div id = "city"> Владивосток </div>
-            <div id = "shops"> Магазины </div>
-            <div id = "business_info" class = "row_flex">
-                <div id = "phone"> +7 (423) 225-25-25 </div>
-                <div id = "hours"> (c 10:00 до 21:00) </div>
+        <div id = "top_information_left">
+            <a href = ""> Владивосток </a>
+            <a href = ""> Магазины </a>
+            <div>
+                <div id = "phone_number"> +7 (423) 225-25-25 </div>
+                <div> &nbsp;(c 10:00 до 21:00) </div>
             </div>
-            <div id = "feedback"> Обратная связь </div>
+            <a href = ""> Обратная связь </a>
         </div>
-        <div id = "purchase" class = "row_flex">
-            <div id = "how_to_buy"> Как купить </div>
-            <div id = "payment"> Оплата </div>
-            <div id = "delivery"> Доставка </div>
+        <div id = "top_information_right">
+            <a href = ""> Как купить </a>
+            <a href = ""> Оплата </a>
+            <a href = ""> Доставка </a>
         </div>
     </div>
 
-    <div id = "main_bar" class = "row_flex">
-        <img src = "icons/main_logo.png">
-        <p> Каталог <img class = "bar_icon" src = "icons/catalog_icon.svg" align = left>
-        </p>
+    <div id = "main_bar" class = "flex_row flex_stretch">
+        <img id = "main_logo" src = "icons/main_logo.png">
 
-        <div id = "search">
-            <input type = "text" placeholder = "Поиск по сайту">
-        </div>
+        <!-- <div id = "main_bar_left" class = "flex_row flex_stretch"> -->
+            <div id = "main_bar_catalog" class = "flex_row">
+                <img class = "bar_icon" src = "icons/catalog_icon.svg">
+                <a href = ""> Каталог </a>
+            </div>
 
-        <div id = "your_account_section">
-            <div id = "your_account"> Личный кабинет </div>
-            <div id = "sign_in"> Вход </div>
-            <div id = "sign_up"> Регистрация </div>
-        </div>
+            <div id = "search" class = "flex_row">
+                <input class = "thin_border" type = "text" placeholder = "Поиск по сайту">
+            </div>
+        <!-- </div> -->
 
-        <div id = "comparison"> Сравнение </div>
-        <div id = "cart"> Корзина </div>
+        <!-- <div id = "main_bar_right" class = "flex_row flex_stretch"> -->
+            <div class = "flex_row">
+                <img src = "icons/your_account.png">
+                <div class = "flex_col">
+                    <a href = ""> <nobr> Личный кабинет </nobr> </a>
+                    <div class = "flex_row small">
+                        <a href = ""> Вход </a>
+                        <span>&nbsp;</span>
+                        <a href = ""> Регистрация </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "flex_row">
+                <img src = "icons/compare_orange.png">
+                <a href = ""> Сравнение </a>
+            </div>
+            <div class = "flex_row">
+                <img src = "icons/cart.png">
+                <a href = ""> Корзина </a>
+            </div>
+        <!-- </div> -->
     </div>
 
     <div id = "main_body">
@@ -145,10 +164,10 @@
             <div class = "top_categories">
                     <a href = ""> Телевизоры </a>
                     <a href = ""> Смартфоны </a>
-                    <a href = ""> Встраиваемые панели </a>
+                    <a href = ""> <nobr> Встраиваемые панели </nobr> </a>
                     <a href = ""> Холодильники </a>
                     <a href = ""> Увлажнители </a>
-                    <a href = ""> Стиральные машины </a>
+                    <a href = ""> <nobr> Стиральные машины </nobr> </a>
             </div>
 
             <div class = "swipe_action">
@@ -156,18 +175,22 @@
             </div>
 
             <div class = "tile_actions">
-                <img class = "tile_action" src = "banners/tile_actions_1.png">
-                <img class = "tile_action" src = "banners/tile_actions_2.png">
-                <img class = "tile_action" src = "banners/tile_actions_3.png">
-                <img class = "tile_action" src = "banners/tile_actions_4.png">
+                <div class = "tile_actions_row">
+                    <img class = "tile_action" src = "banners/tile_actions_1.png">
+                    <img class = "tile_action" src = "banners/tile_actions_2.png">
+                    <img class = "tile_action" src = "banners/tile_actions_3.png">
+                    <img class = "tile_action" src = "banners/tile_actions_4.png">
+                </div>
 
-                <img class = "tile_action" src = "banners/tile_actions_5.png">
-                <img class = "tile_action" src = "banners/tile_actions_6.png">
-                <img class = "tile_action" src = "banners/tile_actions_7.png">
-                <img class = "tile_action" src = "banners/tile_actions_8.png">
+                <div class = "tile_actions_row">
+                    <img class = "tile_action" src = "banners/tile_actions_5.png">
+                    <img class = "tile_action" src = "banners/tile_actions_6.png">
+                    <img class = "tile_action" src = "banners/tile_actions_7.png">
+                    <img class = "tile_action" src = "banners/tile_actions_8.png">
+                </div>
             </div>
 
-            <div>
+            <div id = "discount_block">
                 <div class = "category_header"> Скидки </div>
                 <div id = "discount_tiles" class = "row_tiles">
                     <div class = "product_tile">

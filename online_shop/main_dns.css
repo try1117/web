@@ -3,7 +3,7 @@ html * {
     background-color: lightgray;
 }
 
-.row_flex {
+.flex_row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
