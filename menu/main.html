@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" title="horizontal" type="text/css" href="main.css">
+    <title>Menu</title>
+</head>
+
+<body class="body-style-horizontal">
+
+<script>
+var
+    style_idx=0;
+    menu_styles=["menu-style-horizontal", "menu-style-vertical"];
+    body_styles=["body-style-horizontal", "body-style-vertical"];
+
+function changeMenuOrientation() {
+    let menu = document.getElementById("main-menu");
+    let body = document.getElementsByTagName("body").item(0);
+
+    next_style_idx = (style_idx + 1) % 2;
+
+    menu.classList.replace(menu_styles[style_idx], menu_styles[next_style_idx]);
+    body.classList.replace(body_styles[style_idx], body_styles[next_style_idx]);
+
+    style_idx = next_style_idx;
+}
+</script>
+
+<nav>
+    <ul id="main-menu" class="menu menu-style-horizontal">
+        <li onclick="changeMenuOrientation()">Change style</li>
+        <li>Home
+            <ul>
+                <li>one</li>
+                <li>two
+                    <ul>
+                        <li>I</li>
+                        <li>II</li>
+                        <li>III</li>
+                        <li>IV
+                            <ul>
+                                <li>qwerty
+                                    <ul>
+                                        <li>first_First_FIRST</li>
+                                        <li>second Second SECOND</li>
+                                    </ul>
+                                </li>
+                                <li>asdfjkl;</li>
+                                <li>0123456789</li>
+                            </ul>
+                        </li>
+                        <li>V</li>
+                    </ul>
+                </li>
+                <li>three</li>
+            </ul>
+        </li>
+        <li>News</li>
+        <li>SETI</li>
+        <li>Contact</li>
+        <li>About</li>
+    </ul>
+</nav>
+
+<div id="main-container">
+    <h3>Antelope Canyon</h3>
+    <img src="antelope-canyon.jpg">
+    <p>Antelope Canyon is a slot canyon in the American Southwest. It is on Navajo land east of Page, Arizona. Antelope Canyon includes two separate, scenic slot canyon sections, referred to individually as "Upper Antelope Canyon" or "The Crack"; and "Lower Antelope Canyon" or "The Corkscrew".</p>
+
+    <p>The Navajo name for Upper Antelope Canyon is Tsé bighánílíní, which means 'the place where water runs through rocks'. Lower Antelope Canyon is Hazdistazí (called "Hasdestwazi" by the Navajo Parks and Recreation Department), or 'spiral rock arches'. Both are in the LeChee Chapter of the Navajo Nation.[4] The canyons are accessible by guided tour only.</p>
+</div>
+
+</body>
+</html>
