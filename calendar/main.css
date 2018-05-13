@@ -1,10 +1,11 @@
 body {
-    /* background-color: blue; */
+    /* background-color: grey; */
 }
 
 #main-container {
     display: flex;
     flex-direction: row;
+    /* background-color: grey; */
 }
 
 #main-container > * {

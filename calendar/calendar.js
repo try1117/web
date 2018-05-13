@@ -1,10 +1,14 @@
 'use strict';
 
+// (function() {
+// this.weekdays=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
+// const weekdays=['Mo','Tu','We','Th','Fr','Sa','Su']
+// const monthName=['January','February','March','April','May','June','July','August','September','October','November','December'];
+
 var calendarCounter = 0;
 
 class Calendar {
     constructor(container) {
-        // this.weekdays=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
         this.weekdays=['Mo','Tu','We','Th','Fr','Sa','Su']
         this.monthName=['January','February','March','April','May','June','July','August','September','October','November','December'];
 
@@ -95,8 +99,8 @@ class Calendar {
     generateInput() {
         this.dateInput = document.createElement('input');
         this.container.appendChild(this.dateInput);
-        // dateInput.type = 'date';
-        // dateInput.value = '28-Oct-2018';
+        // this.dateInput.type = 'date';
+        // this.dateInput.value = '28-Oct-2018';
     }
 
     repaintCalendar() {
