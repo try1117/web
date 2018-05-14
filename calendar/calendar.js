@@ -50,9 +50,7 @@
                             self.selectedDate.setMonth(self.date.getMonth());
                             self.selectedDate.setDate(this.innerHTML);
                             self.addExistingSelection();
-
-                            // TODO: event on date change
-                            self.dateInput.value = self.selectedDate.toDateString();
+                            self.dateInput.value = self.dateToString(self.selectedDate);
                         }
                     });
                 }
@@ -93,10 +91,20 @@
         }
 
         generateInput() {
+            let self = this;
             this.dateInput = document.createElement('input');
             this.container.appendChild(this.dateInput);
-            // this.dateInput.type = 'date';
-            // this.dateInput.value = '28-Oct-2018';
+            this.dateInput.addEventListener('change', function() {
+                let parts = this.value.split('.');
+                let date = new Date(parts[2], parts[1] - 1, parts[0]);
+                if (!isNaN(date.getTime())) {
+                    self.removeExistingSelection();
+                    self.selectedDate = date;
+                    self.date = date;
+                    self.repaintCalendar();
+                    self.addExistingSelection();
+                }
+            });
         }
 
         repaintCalendar() {
@@ -125,7 +133,7 @@
             }
 
             this.monthYearCaption.innerHTML = monthName[this.date.getMonth()] + ' ' + this.date.getFullYear();
-            this.dateInput.value = this.selectedDate.toDateString();
+            this.dateInput.value = this.dateToString(this.selectedDate);
             this.table.lastChild.style.display = (enableSixRow ? 'table-row' : 'none');
         }
 
@@ -166,6 +174,10 @@
             }
 
             return null;
+        }
+
+        dateToString(date) {
+            return date.toLocaleDateString('ru');
         }
     }
 
