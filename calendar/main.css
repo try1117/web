@@ -35,6 +35,12 @@ body {
     background-color: Gainsboro !important;
 }
 
+.calendar-today-cell {
+    color: green;
+    outline: 2px solid green;
+    font-weight: bold;
+}
+
 .calendar-month-year-container {
     display: flex;
     flex-direction: row;
