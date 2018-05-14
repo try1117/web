@@ -12,11 +12,60 @@ body {
     padding: 25px;
 }
 
-.calendar {
+#main-container > div > * {
+    margin: 10px;
+}
+
+.calendar-input {
+    /* background-color: lightgrey; */
+}
+
+.calendar-input button {
+    cursor: pointer;
+}
+
+.calendar-input button:focus {
+    outline: none;
+}
+
+.calendar-input-container {
+    position: relative;
+    width: 120px;
+}
+
+.calendar-input-container > input {
+    width: 100%;
+    /* color: red; */
+}
+
+.calendar-dropdown-container {
+    position: absolute;
+    display: none;
     background-color: lightgrey;
 }
 
-.calendar > table td {
+.calendar-dropdown-btn {
+    position: absolute;
+    top: 0;
+    right: 2px;
+    height: 24px;
+    width: 24px;
+    border: none;
+    background-color: inherit;
+    background-image: url("drop-down-arrow.png");
+    background-repeat: no-repeat;
+}
+
+.calendar-dropdown-container-show {
+    display: block;
+}
+
+/* .calendar-input > input:hover + div {
+    display: block;
+    background-color: red;
+} */
+
+.calendar-dropdown-container > table td {
     padding: 20px;
     background-color: #F8F8F8;
     font-size: 30px;
@@ -26,7 +75,7 @@ body {
     text-align: center;
 }
 
-.calendar > table td:hover {
+.calendar-dropdown-container > table td:hover {
     background-color: #f1eebf;
 }
 
@@ -66,7 +115,7 @@ body {
     font-size: 22px;
 }
 
-.calendar > input {
+.calendar-input input {
     font-size: 15px;
     /* background-color: white; */
     /* border: none; */

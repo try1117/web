@@ -12,7 +12,12 @@
         constructor(container) {
             this.calendarCounter = calendarCounter++;
             this.container = container;
+
             this.generateInput();
+            this.dropdownContainer = document.createElement('div');
+            this.dropdownContainer.classList.add('calendar-dropdown-container');
+            this.container.appendChild(this.dropdownContainer);
+
             this.generateTopBar();
             this.generateTable();
 
@@ -24,7 +29,7 @@
 
         generateTable() {
             this.table = document.createElement('table');
-            this.container.appendChild(this.table);
+            this.dropdownContainer.appendChild(this.table);
 
             let headers = this.table.appendChild(document.createElement('tr'));
             for (let col = 0; col < 7; ++col) {
@@ -86,14 +91,45 @@
             dateContainer.appendChild(nextBtn);
 
             dateContainer.classList.add('calendar-month-year-container');
-            this.container.appendChild(dateContainer);
             this.monthYearCaption = monthYearCaption;
+            this.dropdownContainer.appendChild(dateContainer);
         }
 
         generateInput() {
             let self = this;
+            let dateInputContainer = document.createElement('div');
+            dateInputContainer.classList.add('calendar-input-container');
+            this.container.appendChild(dateInputContainer);
+
             this.dateInput = document.createElement('input');
-            this.container.appendChild(this.dateInput);
+            dateInputContainer.appendChild(this.dateInput);
+            this.dateInput.setAttribute('maxlength', 10);
+
+            let dropdownBtn = document.createElement('button');
+            dateInputContainer.appendChild(dropdownBtn);
+            dropdownBtn.classList.add('calendar-dropdown-btn');
+
+            let dropdownHidden = true;
+            dropdownBtn.addEventListener('click', function() {
+                let checkForOutsideClick = function(event) {
+                    if (!self.container.contains(event.target)) {
+                        self.dropdownContainer.classList.remove('calendar-dropdown-container-show');
+                        dropdownHidden = true;
+                        document.removeEventListener('click', checkForOutsideClick);
+                    }
+                };
+
+                if (dropdownHidden) {
+                    self.dropdownContainer.classList.add('calendar-dropdown-container-show');
+                    document.addEventListener('click', checkForOutsideClick);
+                }
+                else {
+                    self.dropdownContainer.classList.remove('calendar-dropdown-container-show');
+                    document.removeEventListener('click', checkForOutsideClick);
+                }
+                dropdownHidden = !dropdownHidden;
+            });
+
             this.dateInput.addEventListener('change', function() {
                 let parts = this.value.split('.');
                 let date = new Date(parts[2], parts[1] - 1, parts[0]);
@@ -182,7 +218,7 @@
     }
 
     window.onload = function() {
-        let calendarContainers = document.getElementsByClassName('calendar');
+        let calendarContainers = document.getElementsByClassName('calendar-input');
         for (let container of calendarContainers) {
             new Calendar(container);
         }
